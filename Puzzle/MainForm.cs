@@ -137,7 +137,6 @@ namespace Puzzle
                 {
                     MessageBox.Show("Nice man!");
                     table.Enabled = false;
-                    BtnReset.Enabled = false;
                 }
             }
             BtnRandomize.Enabled = false;
