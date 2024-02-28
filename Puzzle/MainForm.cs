@@ -8,15 +8,15 @@ namespace Puzzle
 {
     enum Side { Left, Top, Right, Bottom }
 
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
-        const int rows = 2;
-        const int columns = 2;
+        const int rows = 3;
+        const int columns = 3;
         int clicks = 0;
         TableLayoutPanelCellPosition emptyCellPosition =
             new TableLayoutPanelCellPosition(columns - 1, rows - 1);
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             Reset();
@@ -124,12 +124,12 @@ namespace Puzzle
                 var current = table.GetCellPosition(button);
                 table.SetCellPosition(button, emptyCellPosition);
                 emptyCellPosition = current;
+                if (IsCorrect())
+                {
+                    MessageBox.Show("Nice man!");
+                }
             }
             LabelClicks.Text = (++clicks).ToString();
-            if (IsCorrect())
-            {
-                MessageBox.Show("Nice man!");
-            }
         }
 
         private void BtnRandomize_Click(object sender, EventArgs e)
