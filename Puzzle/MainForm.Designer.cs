@@ -59,9 +59,10 @@
             // 
             // LabelClicks
             // 
-            this.LabelClicks.Location = new System.Drawing.Point(77, 167);
+            this.LabelClicks.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.LabelClicks.Location = new System.Drawing.Point(80, 167);
             this.LabelClicks.Name = "LabelClicks";
-            this.LabelClicks.Size = new System.Drawing.Size(94, 34);
+            this.LabelClicks.Size = new System.Drawing.Size(91, 34);
             this.LabelClicks.TabIndex = 2;
             this.LabelClicks.Text = "0";
             this.LabelClicks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
