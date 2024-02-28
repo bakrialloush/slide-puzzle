@@ -24,6 +24,7 @@ namespace Puzzle
 
         private void Reset()
         {
+            SetClicks(0);
             table.Controls.Clear();
             table.ColumnStyles.Clear();
             table.RowStyles.Clear();
@@ -60,6 +61,8 @@ namespace Puzzle
                     }
                 }
             }
+            table.Enabled = true;
+            BtnRandomize.Enabled = true;
         }
 
         private void Randomize()
@@ -84,7 +87,12 @@ namespace Puzzle
                     break;
                 }
             }
-            clicks = 0;
+            SetClicks(clicks);
+        }
+
+        private void SetClicks(int count)
+        {
+            clicks = count;
             LabelClicks.Text = clicks.ToString();
         }
 
@@ -124,12 +132,15 @@ namespace Puzzle
                 var current = table.GetCellPosition(button);
                 table.SetCellPosition(button, emptyCellPosition);
                 emptyCellPosition = current;
+                SetClicks(++clicks);
                 if (IsCorrect())
                 {
                     MessageBox.Show("Nice man!");
+                    table.Enabled = false;
+                    BtnReset.Enabled = false;
                 }
             }
-            LabelClicks.Text = (++clicks).ToString();
+            BtnRandomize.Enabled = false;
         }
 
         private void BtnRandomize_Click(object sender, EventArgs e)

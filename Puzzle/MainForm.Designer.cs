@@ -77,7 +77,7 @@
             this.BtnReset.UseVisualStyleBackColor = true;
             this.BtnReset.Click += new System.EventHandler(this.BtnReset_Click);
             // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -86,9 +86,9 @@
             this.Controls.Add(this.LabelClicks);
             this.Controls.Add(this.BtnRandomize);
             this.Controls.Add(this.table);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Slide Puzzle";
             this.ResumeLayout(false);
 
         }
